@@ -1,0 +1,13 @@
+Package: tableplot
+Type: Package
+Title: Represents tables as semi-graphic displays
+Version: 0.3
+Date: 2010-01-17
+Author: Ernest Kwan and Michael Friendly
+Maintainer: Michael Friendly <friendly@yorku.ca>
+Depends: grid, lattice
+Suggests: corrgram
+Description: 
+License: GPL
+LazyLoad: yes
+Packaged: 2010-01-17 00:06:32 UTC; Michael
