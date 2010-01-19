@@ -1,8 +1,8 @@
 Package: tableplot
 Type: Package
 Title: Represents tables as semi-graphic displays
-Version: 0.3
-Date: 2010-01-17
+Version: 0.3-1
+Date: 2010-01-19
 Author: Ernest Kwan and Michael Friendly
 Maintainer: Michael Friendly <friendly@yorku.ca>
 Depends: grid, lattice

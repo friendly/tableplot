@@ -21,8 +21,8 @@ are handled by superimposing symbols.
 \tabular{ll}{
 Package: \tab tableplot\cr
 Type: \tab Package\cr
-Version: \tab 0.3\cr
-Date: \tab 2010-01-17\cr
+Version: \tab 0.3-1\cr
+Date: \tab 2010-01-19\cr
 License: \tab GPL\cr
 LazyLoad: \tab yes\cr
 }
@@ -56,5 +56,6 @@ Tableplot: A new tool for assessing precise predictions
 
 \code{\link[gplots]{balloonplot}} for balloonplots of two-way tables
 }
-%\examples{
-%}
+\examples{
+# See: demo(psych9)
+}

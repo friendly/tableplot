@@ -15,3 +15,8 @@ o Added NEO data and examples
 o Cleaned up code in tableplot.default, using do.call for cellgram.
 o Initial upload to R-Forge
 
+Version 0.3-1 (2010-01-19)
+o Added demo/psych9.R
+
+
+

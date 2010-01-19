@@ -3,6 +3,11 @@
 # modified 1-14-2010 MF: set default for assign.sets
 # modified 1-16-2010 MF: replaced ugly call to cellgram with do.call; cleaned up code
 
+# TODO: Should attempt to calculate better default values for top.space, left.space
+# TODO: Perhaps should use mar = c(left, top, right, bottom) instead to allow space on all margins
+# TODO: There should be some default for cell.specs:  formals(cellgram)[-1], but scale.max more sensible
+# TODO: Allow better positioning of title (which should probably be called 'main')
+
 tableplot <-
 	function(values,  ...) UseMethod("tableplot")
 
@@ -69,7 +74,7 @@ tableplot.default <- function(
 	#---Create a text.m matrix if none provided.
 	#---This would be filled with NAs; useful if empty cells requested but do not insert text
 	
-	if (!is.matrix(text.m)) text.m <- matrix("", dim(assign.sets)[1], dim(assign.sets)[2])
+	if (!is.matrix(text.m)) text.m <- matrix("", rows, cols)
 	
 	#---Create Layout 1 and write main title.
 
