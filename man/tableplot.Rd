@@ -21,7 +21,7 @@ tableplot(values, ...)
 
 \method{tableplot}{default}(values, assign.sets, cell.specs, 
 	v.parts = 0, h.parts = 0, gap = 2, text.m = 0, empty.text.size = 0.8, empty.text.col = "grey30", 
-	title = "", table.label = TRUE, label.size = 0.8, side.rot = 0, left.space = 5, top.space = 5, ...)
+	title = NULL, table.label = TRUE, label.size = 0.8, side.rot = 0, left.space = 10, top.space = 10+10*(!is.null(title)), ...)
 }
 %- maybe also 'usage' for other objects documented here.
 \arguments{
@@ -64,7 +64,7 @@ Text color for text-only cells
 Main title
 }
   \item{table.label}{
-Whether to print row/column labels
+Logical value: whether to print row/column labels.
 }
   \item{label.size}{
 Character size for labels

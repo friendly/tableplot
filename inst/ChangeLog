@@ -17,6 +17,10 @@ o Initial upload to R-Forge
 
 Version 0.3-1 (2010-01-19)
 o Added demo/psych9.R
+o Modified defaults for top.space, left.space in tableplot
+o Added tableplot.colldiag (no example)
+
+
 
 
 

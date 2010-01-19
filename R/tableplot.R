@@ -2,6 +2,7 @@
 # mod MF: changed t.col to label.col for consistency
 # modified 1-14-2010 MF: set default for assign.sets
 # modified 1-16-2010 MF: replaced ugly call to cellgram with do.call; cleaned up code
+# modified 1-19-2010 MF: title default=NULL, better defaults for top.space, left.space
 
 # TODO: Should attempt to calculate better default values for top.space, left.space
 # TODO: Perhaps should use mar = c(left, top, right, bottom) instead to allow space on all margins
@@ -25,19 +26,19 @@ tableplot.default <- function(
 	empty.text.size 	= 0.8,
 	empty.text.col 	= "grey30", 
 	
-	title		="", 
+	title		=NULL, 
 
 	table.label=TRUE,	
 	label.size =0.8,	
 	side.rot	=0,		# Degree of rotation (positive for counter-clockwise)
 	
-	left.space	=5,		# Millimeters between left of tableplot and left edge of drawing region
-	top.space	=5,		# Analogous to above
+	left.space	=10,		# Millimeters between left of tableplot and left edge of drawing region
+	top.space	=10+10*(!is.null(title)),	# Analogous to above
 	...                 # Required for consistency with generic
 	){
 
 	require(grid)
-	require(lattice)
+	require(lattice)    # TODO: do we really need lattice?
 
 	rows <- dim(values)[1]
 	cols <- dim(values)[2]
@@ -85,7 +86,7 @@ tableplot.default <- function(
 	#---Push row 1 of Layout 1.
 	
 	pushViewport(viewport(layout.pos.row=1)) 	
-	grid.text(title, x=0.02, just=c("left", "bottom"))
+	if (!is.null(title)) grid.text(title, x=0.02, just=c("left", "bottom"))
 	upViewport()
 
 	#---Create Layout 2.
@@ -147,11 +148,11 @@ tableplot.default <- function(
 			}
 
 			##grid.rect()
-			if ((j==1) && (table.label==T)) {
+			if ((j==1) && (table.label==TRUE)) {
 					if (side.rot==0) {grid.text(side.label[i], x=-0.14, just=1, gp=gpar(cex=label.size))}
 					else 			{grid.text(side.label[i], x=-0.35, just=c("center"), rot=side.rot, gp=gpar(cex=label.size))}
 					}
-			if ((i==1) && (table.label==T)) {grid.text(top.label[j],  y=1.15, vjust=0, gp=gpar(cex=label.size))}
+			if ((i==1) && (table.label==TRUE)) {grid.text(top.label[j],  y=1.15, vjust=0, gp=gpar(cex=label.size))}
 			upViewport()
 			upViewport()
 			

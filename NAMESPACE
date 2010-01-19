@@ -1,2 +1,4 @@
+# 1-19-2010 MF: added tableplot.colldiag
 exportPattern("^[[:alpha:]]+")
 S3method(tableplot, default)
+S3method(tableplot, colldiag)
