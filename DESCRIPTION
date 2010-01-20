@@ -6,7 +6,7 @@ Date: 2010-01-19
 Author: Ernest Kwan and Michael Friendly
 Maintainer: Michael Friendly <friendly@yorku.ca>
 Depends: grid, lattice
-Suggests: corrgram, perturb
+Suggests: corrgram, perturb, car, vcd
 Description: 
 License: GPL
 LazyLoad: yes

@@ -13,7 +13,8 @@ The goal is to highlight the variables involved in one or more nearly collinear
 relations among the predictors.
 
 The default scheme is to show the column of condition indices at the left, using
-color to indicate danger (red), warning (yellow) and OK (green).
+color to indicate danger (red), warning (yellow) and OK (green) with colors
+designed to reproduce as ordered in B/W.
 The variance proportions for the predictors are shown in a block at the right,
 using white, pink, red for small, medium and large values.
 }
@@ -83,9 +84,28 @@ Michael Friendly
 %% ~Make other sections like Warning with \section{Warning }{....} ~
 
 \seealso{
-\code{\link[perturb]{colldiag}}
+\code{\link[perturb]{colldiag}} for calculation of collinearity diagnostics
 }
 \examples{
+# Baseball data example, from Friendly & Kwan (2009)
+if (require(vcd) && require(perturb)) {
+	# model, with transformed variables
+	Baseball$logsal <- log(Baseball$sal87)
+	Baseball$years7 <- pmin(Baseball$years,7)
+
+	base.mod <- lm(logsal ~ years+atbat+hits+homeruns+runs+rbi+walks, data=Baseball)
+	if (require(car)) {
+		# examine variance inflation factors
+		vif(base.mod)
+	}
+	# corresponds to SAS: / collinoint option
+	cd <- colldiag(base.mod, add.intercept=FALSE, center=TRUE)
+	# simplified display
+	print(cd, fuzz=.3)
+
+	tableplot(cd)
+	}
+
 }
 % Add one or more standard keywords, see file 'KEYWORDS' in the
 % R documentation directory.
