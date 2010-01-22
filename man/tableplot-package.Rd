@@ -21,13 +21,15 @@ are handled by superimposing symbols.
 \tabular{ll}{
 Package: \tab tableplot\cr
 Type: \tab Package\cr
-Version: \tab 0.3-1\cr
-Date: \tab 2010-01-19\cr
+Version: \tab 0.3-2\cr
+Date: \tab 2010-01-22\cr
 License: \tab GPL\cr
 LazyLoad: \tab yes\cr
 }
-The main function is \code{tableplot}. In future releases, tableplot methods will be provided
-for some specialized tables.
+The main function is \code{\link{tableplot}}. \code{\link{tableplot.colldiag}} is
+provided for collinearity diagnostics (Friendly & Kwan, 2009).
+In future releases, tableplot methods will be provided
+for other specialized tables.
 }
 \author{
 Ernest Kwan and Michael Friendly
@@ -52,6 +54,8 @@ Tableplot: A new tool for assessing precise predictions
 }
 \keyword{ package }
 \seealso{
+\code{\link{tableplot}}, \code{\link{tableplot.colldiag}}
+
 \code{\link[corrgram]{corrgram}} for corrgrams of correlation matrices
 
 \code{\link[gplots]{balloonplot}} for balloonplots of two-way tables

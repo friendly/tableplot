@@ -1,10 +1,11 @@
+## last modified 1-22-10 MF: fixed bug in transpose
 
 # Transpose an array of 2 or 3 dimensions,
 # where transposition is carried out on the first two dimensions:
 transpose <- function(x) {
 	# TODO: check for class matrix or array or something else suitable
-	if (length(dim(x)==2)) result = t(x)
-	else if (length(dim(x)==3)) result = aperm(x, c(2,1,3))
+	if (length(dim(x))==2) result = t(x)
+	else if (length(dim(x))==3) result = aperm(x, c(2,1,3))
 	else stop("Can't transpose")
 	result
 }

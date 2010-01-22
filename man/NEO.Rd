@@ -27,6 +27,7 @@ sample from Zimbabwe
 \usage{
 	data(NEO.n)
 	data(NEO.s)
+	data(NEO)
 	}
 \format{
 For \code{NEO.n}:
@@ -47,6 +48,16 @@ For \code{NEO.s}:
  - attr(*, "dimnames")=List of 2
   ..$ : chr [1:30] "N1" "N2" "N3" "N4" ...
   ..$ : chr [1:5] "N" "E" "O" "A" ...
+}
+
+The \code{NEO} data is the three-way array combining \code{NEO.n} and \code{NEO.s}:
+  The format is:
+\preformatted{
+ num [1:30, 1:5, 1:2] 0.81 0.63 0.8 0.73 0.49 0.7 -0.12 -0.18 -0.32 0.04 ...
+ - attr(*, "dimnames")=List of 3
+  ..$ : chr [1:30] "N1" "N2" "N3" "N4" ...
+  ..$ : chr [1:5] "N" "E" "O" "A" ...
+  ..$ : chr [1:2] "Normative" "Shona" 
 }
 
 }

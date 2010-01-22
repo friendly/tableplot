@@ -21,6 +21,12 @@ o Modified defaults for top.space, left.space in tableplot
 o Added tableplot.colldiag (no example)
 o Added example(tableplot.colldiag)
 
+Version 0.3-2 (2010-01-22)
+o Added LazyData="yes", so data() not required; Suggests: abind
+o Fixed small bug in transpose()
+o Added NEO array, combining NEO.n and NEO.s
+o Added congruence.array
+
 
 
 
