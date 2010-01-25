@@ -1,12 +1,12 @@
 Package: tableplot
 Type: Package
 Title: Represents tables as semi-graphic displays
-Version: 0.3-2
-Date: 2010-01-22
+Version: 0.3-3
+Date: 2010-01-25
 Author: Ernest Kwan and Michael Friendly
 Maintainer: Michael Friendly <friendly@yorku.ca>
-Depends: grid, lattice
-Suggests: corrgram, perturb, car, vcd, abind
+Depends: grid
+Suggests: lattice, corrgram, perturb, car, vcd, abind
 Description: 
 License: GPL
 LazyLoad: yes

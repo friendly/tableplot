@@ -3,11 +3,13 @@
 # modified 1-14-2010 MF: set default for assign.sets
 # modified 1-16-2010 MF: replaced ugly call to cellgram with do.call; cleaned up code
 # modified 1-19-2010 MF: title default=NULL, better defaults for top.space, left.space
+# modified 1-25-2010 MF: added grid.rect() for text.m display
 
-# TODO: Should attempt to calculate better default values for top.space, left.space
+# DONE: Calculate better default values for top.space, left.space
 # TODO: Perhaps should use mar = c(left, top, right, bottom) instead to allow space on all margins
 # TODO: There should be some default for cell.specs:  formals(cellgram)[-1], but scale.max more sensible
 # TODO: Allow better positioning of title (which should probably be called 'main')
+# TODO: Rename args for easier understanding: label.size -> label.cex, empty.text.size -> text.cex
 
 tableplot <-
 	function(values,  ...) UseMethod("tableplot")
@@ -20,7 +22,7 @@ tableplot.default <- function(
 	
 	v.parts	=0, 	# List of column clusters
 	h.parts	=0, 	# List of row clusters
-	gap			=2, 	# Width of partitions (in millimeters)
+	gap		=2, 	# Width of partitions (in millimeters)
 	
 	text.m 	=0,		# Matrix of text for insertion into empty cell(s)
 	empty.text.size 	= 0.8,
@@ -38,15 +40,15 @@ tableplot.default <- function(
 	){
 
 	require(grid)
-	require(lattice)    # TODO: do we really need lattice?
+#	require(lattice)    # does not require lattice
 
 	rows <- dim(values)[1]
 	cols <- dim(values)[2]
 	# default for assign.sets
 	if (missing(assign.sets)) assign.sets <- matrix(1, rows, cols)
+	n.sets <- max(sets <- unique(as.vector(assign.sets)))
 	
 	## A function to construct a gap list:
-	
 	gap.list <- function(partitions=0,x){
 		if (length(partitions)==1) rep(0,x) else {
 		rep(1:length(partitions), partitions)-1}
@@ -56,8 +58,8 @@ tableplot.default <- function(
 
 	#---Constructing vectors of gaps if partitions provided.
 
-	v.gaps <- gap.list(partitions=v.parts, x=dim(values)[2])
-	h.gaps <- gap.list(partitions=h.parts, x=dim(values)[1])
+	v.gaps <- gap.list(partitions=v.parts, x=cols)
+	h.gaps <- gap.list(partitions=h.parts, x=rows)
 
 	#---Constructing labels, if no row or column names in values.
 
@@ -121,14 +123,15 @@ tableplot.default <- function(
 							x=unit(gap,"mm")*v.gaps[j], 
 							y=unit(1,"npc")-unit(gap,"mm")*h.gaps[i]))				
 
-			if (assign.sets[i,j]==0) 
+			if (assign.sets[i,j]==0) {
 				grid.text(text.m[i,j],gp=gpar(cex=empty.text.size, col=empty.text.col))
-			
+				grid.rect(gp=gpar(col="black", lwd=1))
+			}
 			else 
 			{
 			spec <- cell.specs[[assign.sets[i,j]]]
 #browser()
-      do.call(cellgram, c(list(cell=values[i,j,]), spec))
+            do.call(cellgram, c(list(cell=values[i,j,]), spec))
 #			cellgram(cell  		= values[i,j,], 
 #				   shape 	 		= spec[[1]],
 #				   shape.col 		= spec[[2]],

@@ -27,6 +27,11 @@ o Fixed small bug in transpose()
 o Added NEO array, combining NEO.n and NEO.s
 o Added congruence.array
 
+Version 0.3-3 (2010-01-25)
+o Replaced Depends: lattice with Suggests: lattice
+o Added demo/psych9-corr.R
+
+
 
 
 
