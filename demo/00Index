@@ -1,2 +1,3 @@
 psych9   Factor analysis of 9 psychological abilities from datasets::Harman74.cor
 psych9-corr   Display a correlation matrix as a tableplot
+Lu-etal2009   Summarizing results from a large simulation study
