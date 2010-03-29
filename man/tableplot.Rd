@@ -77,9 +77,9 @@ Space between left of tableplot and left edge of drawing region, in mm.}
 Space between top of tableplot and top edge of drawing region, in mm.}
 
 }
-\details{
+%\details{
 %%  ~~ If necessary, more details than the description above ~~
-}
+%}
 \value{
 None. Used for its side effect
 }
