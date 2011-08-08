@@ -3,6 +3,9 @@ Type: Package
 Title: Represents tables as semi-graphic displays
 Version: 0.3-3
 Date: 2010-01-25
+Author@R: c(person(given = "Ernest", family = "Kwan", role="aut"),
+            person(given = "Michael", family = "Friendly", role=c("aut", "cre"), email="friendly@yorku.ca")
+            )
 Author: Ernest Kwan and Michael Friendly
 Maintainer: Michael Friendly <friendly@yorku.ca>
 Depends: grid
