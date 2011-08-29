@@ -1,8 +1,11 @@
 Package: tableplot
 Type: Package
 Title: Represents tables as semi-graphic displays
-Version: 0.3-3
-Date: 2010-01-25
+Description: This package implements tableplots, a semi-graphic display in the form of a table with numeric values, supplemented
+     by symbols with size proportional to cell value(s), and with visual attributes that can be used to encode
+     other information.
+Version: 0.3-4
+Date: 2011-08-29
 Author@R: c(person(given = "Ernest", family = "Kwan", role="aut"),
             person(given = "Michael", family = "Friendly", role=c("aut", "cre"), email="friendly@yorku.ca")
             )

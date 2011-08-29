@@ -16,13 +16,20 @@ by symbols with size proportional to cell value(s), and with other visual attrib
 essential to direct visual understanding.  Three-way arrays, where the last dimension
 corresponds to levels of a factor for which the first two dimensions are to be compared
 are handled by superimposing symbols.
+
+The general graphic method was first designed as a visualization method of for exploratory
+and confirmatory factor analysis results (Kwan, 2008), allowing easy graphic comparison of
+alternative solutions, rotations, etc. Friendly & Kwan (2009) use this form for a new
+display of collinearity diagnostics,
+and Friendly & Kwan (2011) discuss the use of tableplots in a debate on the roles of
+tables and graphs in statistical presentation.
 }
 \details{
 \tabular{ll}{
 Package: \tab tableplot\cr
 Type: \tab Package\cr
-Version: \tab 0.3-3\cr
-Date: \tab 2010-01-25\cr
+Version: \tab 0.3-4\cr
+Date: \tab 2011-08-29\cr
 License: \tab GPL\cr
 LazyLoad: \tab yes\cr
 }
@@ -43,13 +50,18 @@ Improving Factor Analysis in Psychology: Innovations Based on the Null Hypothesi
 Testing Controversy. Ph. D. thesis,  York University.
 
 Friendly, M. & Kwan, E. (2009).
-Where's Waldo: Visualizing Collinearity Diagnostics
+Where's Waldo: Visualizing Collinearity Diagnostics,
 \emph{The American Statistician}, 63(1), 56-65.
 
 
 Kwan, E. and Lu, I. R. R. and Friendly, M. (2009). 
-Tableplot: A new tool for assessing precise predictions 
+Tableplot: A new tool for assessing precise predictions,
 \emph{Zeitschrift für Psychologie / Journal of Psychology}, 217, 38-48.
+
+Friendly, M. & Kwan, E. (2011).
+Comment (Graph people versus table people: Reply to Gelman),
+\emph{Journal of Computational and Graphical Statistics},
+20 (1), 18-27.
 
 }
 \keyword{ package }
