@@ -28,8 +28,8 @@ tables and graphs in statistical presentation.
 \tabular{ll}{
 Package: \tab tableplot\cr
 Type: \tab Package\cr
-Version: \tab 0.3-4\cr
-Date: \tab 2011-08-29\cr
+Version: \tab 0.3-5\cr
+Date: \tab 2012-08-20\cr
 License: \tab GPL\cr
 LazyLoad: \tab yes\cr
 }
